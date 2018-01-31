@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         createGUI()
+        createGesture()
         
     }
     
@@ -30,5 +31,15 @@ class ViewController: UIViewController {
         mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
+    
+    func createGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func tapGesture(_ sender: UITapGestureRecognizer) {
+        print("tap ok")
+    }
+    
 }
 
