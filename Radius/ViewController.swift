@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
@@ -18,6 +19,13 @@ class ViewController: UIViewController {
         
         createGUI()
         createGesture()
+        
+        let homecoord = CLLocationCoordinate2D(latitude: 50.9504, longitude: 4.0665)
+        let region = MKCoordinateRegionMakeWithDistance(homecoord, 500, 500)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func drawCircle(latitude: CGFloat, longitude: CGFloat, radius: CGFloat) {
         
     }
     
@@ -38,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     @objc func tapGesture(_ sender: UITapGestureRecognizer) {
-        print("tap ok")
+        
     }
     
 }
