@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class Mapview: UIViewController, MKMapViewDelegate {
     
     let mapView = MKMapView()
 
@@ -19,14 +19,17 @@ class ViewController: UIViewController {
         
         createGUI()
         createGesture()
+        mapView.delegate = self
         
         let homecoord = CLLocationCoordinate2D(latitude: 50.9504, longitude: 4.0665)
         let region = MKCoordinateRegionMakeWithDistance(homecoord, 500, 500)
         mapView.setRegion(region, animated: true)
     }
     
-    func drawCircle(latitude: CGFloat, longitude: CGFloat, radius: CGFloat) {
-        
+    func drawCircle(latitude: Double, longitude: Double, radius: Double) {
+        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let circle = MKCircle(center: center, radius: radius)
+        mapView.add(circle)
     }
     
     func createGUI() {
@@ -38,6 +41,9 @@ class ViewController: UIViewController {
         mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        
+        
     }
     
     func createGesture() {
@@ -47,6 +53,24 @@ class ViewController: UIViewController {
     
     @objc func tapGesture(_ sender: UITapGestureRecognizer) {
         
+        let touchLocation = sender.location(in: mapView)
+        let locationCoordinate = mapView.convert(touchLocation, toCoordinateFrom: mapView)
+        
+        drawCircle(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude, radius: 100)
+    }
+    
+    
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let circleRenderer = MKCircleRenderer(overlay: overlay)
+            circleRenderer.fillColor = UIColor.blue.withAlphaComponent(0.1)
+            circleRenderer.strokeColor = UIColor.blue
+            circleRenderer.lineWidth = 1
+            return circleRenderer
+        }
+        
+        return MKOverlayRenderer(overlay: overlay)
     }
     
 }

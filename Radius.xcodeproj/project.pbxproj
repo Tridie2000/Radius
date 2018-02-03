@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9686A29520224EAF0016BA5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686A29420224EAF0016BA5B /* AppDelegate.swift */; };
-		9686A29720224EAF0016BA5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686A29620224EAF0016BA5B /* ViewController.swift */; };
+		9686A29720224EAF0016BA5B /* Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686A29620224EAF0016BA5B /* Mapview.swift */; };
 		9686A29D20224EAF0016BA5B /* Radius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9686A29B20224EAF0016BA5B /* Radius.xcdatamodeld */; };
 		9686A29F20224EAF0016BA5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9686A29E20224EAF0016BA5B /* Assets.xcassets */; };
 		9686A2A220224EAF0016BA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9686A2A020224EAF0016BA5B /* LaunchScreen.storyboard */; };
 		9686A2AD202262AB0016BA5B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9686A2AC202262AB0016BA5B /* MapKit.framework */; };
+		96D0F52820263F270064FBAA /* ChangeRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F52720263F270064FBAA /* ChangeRadius.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9686A29120224EAF0016BA5B /* Radius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9686A29420224EAF0016BA5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9686A29620224EAF0016BA5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9686A29620224EAF0016BA5B /* Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapview.swift; sourceTree = "<group>"; };
 		9686A29C20224EAF0016BA5B /* Radius.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Radius.xcdatamodel; sourceTree = "<group>"; };
 		9686A29E20224EAF0016BA5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9686A2A120224EAF0016BA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9686A2A320224EAF0016BA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9686A2AC202262AB0016BA5B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		96D0F52720263F270064FBAA /* ChangeRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRadius.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				9686A29420224EAF0016BA5B /* AppDelegate.swift */,
-				9686A29620224EAF0016BA5B /* ViewController.swift */,
+				9686A29620224EAF0016BA5B /* Mapview.swift */,
+				96D0F52720263F270064FBAA /* ChangeRadius.swift */,
 				9686A29E20224EAF0016BA5B /* Assets.xcassets */,
 				9686A2A020224EAF0016BA5B /* LaunchScreen.storyboard */,
 				9686A2A320224EAF0016BA5B /* Info.plist */,
@@ -153,8 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9686A29D20224EAF0016BA5B /* Radius.xcdatamodeld in Sources */,
-				9686A29720224EAF0016BA5B /* ViewController.swift in Sources */,
+				9686A29720224EAF0016BA5B /* Mapview.swift in Sources */,
 				9686A29520224EAF0016BA5B /* AppDelegate.swift in Sources */,
+				96D0F52820263F270064FBAA /* ChangeRadius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
