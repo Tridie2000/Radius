@@ -43,7 +43,8 @@ class Mapview: UIViewController, MKMapViewDelegate {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         
-        
+        let changeRadiusButton = UIBarButtonItem(title: "Change radius", style: .plain, target: self, action: #selector(ShowChangeRadiusWindow))
+        self.navigationItem.rightBarButtonItem = changeRadiusButton
     }
     
     func createGesture() {
@@ -52,14 +53,16 @@ class Mapview: UIViewController, MKMapViewDelegate {
     }
     
     @objc func tapGesture(_ sender: UITapGestureRecognizer) {
-        
         let touchLocation = sender.location(in: mapView)
         let locationCoordinate = mapView.convert(touchLocation, toCoordinateFrom: mapView)
         
         drawCircle(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude, radius: 100)
     }
     
-    
+    @objc func ShowChangeRadiusWindow() {
+        let nextController = UINavigationController(rootViewController: ChangeRadius())
+        self.present(nextController, animated: true, completion: nil)
+    }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKCircle {

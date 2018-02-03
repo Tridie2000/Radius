@@ -17,7 +17,14 @@ class ChangeRadius: UIViewController {
     }
     
     func createGUI() {
-        navigationItem.title = "ChangeRadiusTitle"
+        navigationItem.title = "Change Radius"
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(Done))
+        self.navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    @objc func Done() {
+        self.dismiss(animated: true, completion: nil)
     }
 
 
