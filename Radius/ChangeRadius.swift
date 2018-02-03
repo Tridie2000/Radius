@@ -43,6 +43,14 @@ class ChangeRadius: UIViewController {
     }
     
     @objc func Done() {
+        
+        if radiusTextField.text != "" {
+            Mapview.radius = Double(radiusTextField.text!)!
+        } else {
+            Mapview.radius = 100
+        }
+        
+        
         self.dismiss(animated: true, completion: nil)
     }
 

@@ -13,6 +13,7 @@ import CoreLocation
 class Mapview: UIViewController, MKMapViewDelegate {
     
     let mapView = MKMapView()
+    static var radius: Double = 100
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class Mapview: UIViewController, MKMapViewDelegate {
         let touchLocation = sender.location(in: mapView)
         let locationCoordinate = mapView.convert(touchLocation, toCoordinateFrom: mapView)
         
-        drawCircle(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude, radius: 100)
+        drawCircle(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude, radius: Mapview.radius)
     }
     
     @objc func ShowChangeRadiusWindow() {
